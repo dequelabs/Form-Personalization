@@ -1,0 +1,23 @@
+{
+  "name": "cogsistency",
+  "version": "0.0.1",
+  "description": "Consistent UI for common elements",
+  "main": "index.js",
+  "scripts": {
+    "build": "webpack --colors",
+    "start": "npm run build -- --watch",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "babel-core": "^6.26.0",
+    "babel-eslint": "^8.1.2",
+    "babel-loader": "^7.1.2",
+    "babel-preset-env": "^1.6.1",
+    "copy-webpack-plugin": "^4.3.1",
+    "debug": "^3.1.0",
+    "eslint": "^4.15.0",
+    "webpack": "^3.10.0"
+  }
+}
