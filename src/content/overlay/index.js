@@ -1,5 +1,4 @@
 import createDebug from 'debug';
-import ghostEvents from './ghost-events';
 import calculateText from './calculate-text';
 
 const debug = createDebug('cogsistency:content:overlay');
@@ -73,13 +72,6 @@ export default class Overlay {
     this.items.forEach(item => {
       item.target.addEventListener('focus', this.toggleFocus);
       item.target.addEventListener('blur', this.toggleFocus);
-
-      // pass mouse events through from overlay to target
-      ghostEvents(item, [
-        'mouseover',
-        'mouseout',
-        'click'
-      ]);
     });
   }
 
@@ -110,6 +102,7 @@ export default class Overlay {
           left: ${x}px;
           width: ${width}px;
           height: ${height}px;
+          pointer-events: none;
         }
       </style>
     `;
