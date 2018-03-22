@@ -36,8 +36,11 @@ export default class Overlay {
     debug('config: ', this.config);
     this.items = [];
     this.toggleFocus = this.toggleFocus.bind(this);
+    this.update = this.update.bind(this);
 
     this.update();
+    window.addEventListener('scroll', this.update);
+    window.addEventListener('resize', this.update);
   }
 
   update() {
@@ -92,12 +95,12 @@ export default class Overlay {
     // add styles to position the overlay directly on top of target
     const rect = target.getBoundingClientRect();
     const { x, y, width, height } = rect;
-
+    console.log('rect: ', rect);
     shadow.innerHTML += `
       <style>
         div {
           z-index: 2147483647;
-          position: absolute;
+          position: fixed;
           top: ${y}px;
           left: ${x}px;
           width: ${width}px;
